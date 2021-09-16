@@ -1,17 +1,27 @@
 {
   "name": "story",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "build/index.js",
   "repository": "git@github.com:ming995/story.git",
   "author": "ming995 <hymghost@gmail.com>",
   "license": "MIT",
+  "module": "build/index.es.js",
+  "files": ["build"],
   "devDependencies": {
     "@babel/core": "^7.15.5",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
     "@storybook/addon-actions": "^6.3.8",
     "@storybook/addon-essentials": "^6.3.8",
     "@storybook/addon-links": "^6.3.8",
     "@storybook/react": "^6.3.8",
-    "babel-loader": "^8.2.2"
+    "babel-loader": "^8.2.2",
+    "node-sass": "^6.0.1",
+    "rollup": "^2.56.3",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.1",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "typescript": "^4.4.3"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -19,6 +29,7 @@
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook:export": "build-storybook",
+    "build": "rollup -c"
   }
 }
